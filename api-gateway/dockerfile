@@ -1,6 +1,9 @@
-FROM node:lts-alpine as stage
+FROM node:18.18-alpine as stage
 WORKDIR /app
 COPY package*.json .
-RUN npm install
+RUN npm ci
+ENV state_management_container_name= \
+    cart_container_name= \
+    products_container_name=
 COPY . .
 CMD node index.mjs

@@ -1,0 +1,20 @@
+{
+  "name": "micro-frontend-product-and-cart",
+  "license": "MIT",
+  "author": {
+    "name": "Deepak Sharma",
+    "email": "stdeepak22@gmail.com"
+  },
+  "scripts": {
+    "install": "lerna exec npm install",
+    "start": "lerna run start",
+    "build": "lerna run build"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "lerna": "^7.3.0"
+  },
+  "workspaces": [
+    "packages/*"
+  ]
+}
