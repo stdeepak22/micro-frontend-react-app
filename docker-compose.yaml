@@ -1,0 +1,54 @@
+version: '3'
+services:
+  mf-sm:
+    build:
+      context: ./state-management
+      dockerfile: dockerfile
+    # ports:
+    #   - 8090:80
+    container_name: c_sm
+
+  mf-cart:
+    build:
+      context: ./cart
+      dockerfile: dockerfile
+    # ports:
+    #   - 8081:80
+    container_name: c_cart
+    depends_on:
+      - mf-sm
+
+  mf-prod:
+    build:
+      context: ./products
+      dockerfile: dockerfile
+    # ports:
+    #   - 8082:80
+    container_name: c_prod
+    depends_on:
+      - mf-sm
+
+  mf-api-gateway:
+    build:
+      context: ./api-gateway
+      dockerfile: dockerfile
+    ports:
+      - 9090:9090
+    container_name: c_api_gateway
+    depends_on:
+      - mf-sm
+      - mf-cart
+      - mf-prod
+
+  mf-host:
+    build:
+      context: ./host
+      dockerfile: dockerfile
+    ports:
+      - 8080:80
+    container_name: c_host
+    depends_on:
+      - mf-sm
+      - mf-cart
+      - mf-prod
+      - mf-api-gateway

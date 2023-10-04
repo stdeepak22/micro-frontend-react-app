@@ -1,0 +1,17 @@
+{
+  "name": "api-gateway",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.mjs"
+  },
+  "author": {
+    "name": "Deepak Sharma",
+    "email": "stdeepak22@gmail.com"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "fast-gateway": "^3.4.5"
+  }
+}

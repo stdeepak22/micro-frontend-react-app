@@ -1,0 +1,33 @@
+.appContainer{
+    padding-top: 50px;
+}
+
+.mainContainer {
+    display: flex;
+}
+
+.mainContainer .leftContainer{
+    flex:1;
+}
+
+.mainContainer .rightContainer{
+    min-width: 350px;
+    border-left: 1px solid gray;
+}
+
+.rightContainer .fixedContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    max-height: calc(100vh - 70px);
+    overflow-y: auto;
+    right: 0px;
+    top: 60px;
+    width: 350px;
+}
+
+.fixedContainer::-webkit-scrollbar{
+    background: transparent;
+    width: 1px;
+}

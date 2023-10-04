@@ -1,0 +1,14 @@
+html, body{
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.CounterDisplayComponent{
+  border:1px solid gray;
+  border-radius: 5px;
+  padding: 10px;
+}

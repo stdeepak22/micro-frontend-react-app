@@ -1,0 +1,37 @@
+.nav{
+    display: flex;
+    grid-auto-flow: column;
+    height: 50px;
+    background-color: #6850f1;
+    padding: 0px 10px;
+    align-items: center;
+    color:white;
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    z-index: 99;
+}
+
+
+.brand {
+    font-size: 175%;
+    color: white;
+}
+
+.menus{
+    flex:1;
+    padding: 0px 10px;
+}
+
+.cartInfo{
+    width: 80px;
+}
+
+.cartInfo .cartButton{
+    border: 1px solid white;
+    border-radius: 3px;
+    color: white;
+    background: transparent;
+    height: 30px;
+    cursor: pointer;
+}

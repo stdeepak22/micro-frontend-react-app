@@ -1,0 +1,29 @@
+.cartItemList{
+    list-style: none;
+}
+
+.cartItem{
+    border: 1px solid lightgray;
+    border-radius: 3px;
+    padding: 5px 10px;
+}
+
+.cartItem + .cartItem {
+    margin-top: 10px;
+}
+
+.cartItem .cartItemInfo{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.cartItemInfo .leftSection {
+    flex: 1;
+}
+.cartItemInfo .leftSection .title{
+    font-size: 120%;
+}
+
+.cartItemInfo .rightSection {
+    margin-left: 10px;
+}
