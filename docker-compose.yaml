@@ -10,6 +10,8 @@ services:
     build:
       context: ./cart
       dockerfile: dockerfile
+      args:
+        - gateway_base_url=$gateway_url
     container_name: c_cart
     depends_on:
       - mf-sm
@@ -18,6 +20,8 @@ services:
     build:
       context: ./products
       dockerfile: dockerfile
+      args:
+        - gateway_base_url=$gateway_url
     container_name: c_prod
     depends_on:
       - mf-sm
@@ -29,10 +33,6 @@ services:
     ports:
       - 9090:9090
     container_name: c_api_gateway
-    depends_on:
-      - mf-sm
-      - mf-cart
-      - mf-prod
     environment:
       #notice below environment names are set to above three containers name, so internally api gateway, can connect to micro frontend modules
       - state_management_container_name=http://c_sm/
@@ -43,6 +43,8 @@ services:
     build:
       context: ./host
       dockerfile: dockerfile
+      args:
+        - gateway_base_url=$gateway_url
     ports:
       - 8080:80
     container_name: c_host

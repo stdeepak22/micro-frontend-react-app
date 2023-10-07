@@ -3,6 +3,7 @@ WORKDIR /app
 COPY package*.json .
 RUN npm ci
 COPY . .
+ARG gateway_base_url=
 RUN npm run build
 
 FROM nginx:mainline-alpine3.18-slim

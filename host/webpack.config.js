@@ -4,7 +4,7 @@ const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPl
 const deps = require("./package.json").dependencies;
 module.exports = (_, argv) => ({
   output: {
-    publicPath: "http://localhost:8080/",
+    // publicPath: "http://localhost:8080/",
   },
 
   resolve: {
@@ -41,12 +41,12 @@ module.exports = (_, argv) => ({
 
   plugins: [
     new ModuleFederationPlugin({
-      name: "state_management",
+      name: "host",
       filename: "remoteEntry.js",
       remotes: {
-        cart: `cart@http://localhost:9090/cart/remoteEntry.js`,
-        products: `products@http://localhost:9090/product/remoteEntry.js`,
-        SM: 'state_management@http://localhost:9090/sm/remoteEntry.js',
+        cart: `cart@${process.env.gateway_base_url || 'http://localhost:9090/'}cart/remoteEntry.js`,
+        products: `products@${process.env.gateway_base_url || 'http://localhost:9090/'}product/remoteEntry.js`,
+        SM: `state_management@${process.env.gateway_base_url || 'http://localhost:9090/'}sm/remoteEntry.js`
       },
       exposes: {},
       shared: {

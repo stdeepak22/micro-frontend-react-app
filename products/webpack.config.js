@@ -44,7 +44,7 @@ module.exports = (_, argv) => ({
       name: "products",
       filename: "remoteEntry.js",
       remotes: {
-        SM: 'state_management@http://localhost:9090/sm/remoteEntry.js'
+        SM: `state_management@${process.env.gateway_base_url || 'http://localhost:9090/'}sm/remoteEntry.js`
       },
       exposes: {
         '.': './src/ToExpose.ts'
