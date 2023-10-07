@@ -43,3 +43,7 @@ This monorepo has 5 components/packages which works together to make a product l
 
 ## When running under docker.
 ![on docker](readme-assets/on-docker.png)
+
+
+
+#react #redux #TypeScript #Javascript #docker #microfrontend #cart #create-mf-app #create-react-app #cra
